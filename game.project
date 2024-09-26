@@ -17,3 +17,6 @@ height = 1136
 [script]
 shared_state = 1
 
+[android]
+package = com.defold.adpf
+
