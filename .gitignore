@@ -2,3 +2,8 @@
 /build
 .DS_Store
 Thumbs.db
+/.editor_settings
+manifest.private.der
+manifest.public.der
+debug.keystore
+debug.keystore.pass.txt

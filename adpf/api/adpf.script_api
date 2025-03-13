@@ -1,0 +1,90 @@
+- name: adpf
+  type: table
+  desc: Functions and constants for interacting with the Android Device Performance Framework
+
+  members:
+  - name: hint
+    type: table
+    desc: Functions and constants for interacting with the PerformanceHintManager
+
+    members:
+    - name: initialize
+      type: function
+      desc: Initialise performance hints
+      parameters:
+      - name: target_fps_nanos
+        type: number
+      returns:
+      - name: available
+        type: boolean
+        desc: Return true if the PerformanceHintManager API is available on the device
+
+    - name: update_target_fps
+      type: function
+      desc: Update the target fps
+      parameters:
+      - name: target_fps_nanos
+        type: number
+
+  - name: thermal
+    type: table
+    desc: Functions and constants for interacting with the PowerManager ThermalAPI
+
+    members:
+    - name: initialize
+      type: function
+      desc: Initialise thermal
+      parameters:
+      - name: available
+        type: boolean
+        desc: Return true if the Thermal API is available on the device
+
+    - name: get_headroom
+      type: function
+      desc: Provides an estimate of how much thermal headroom the device currently has before hitting severe throttling.
+      parameters:
+      - name: forecast_seconds
+        desc: how many seconds in the future to forecast
+        type: number
+      returns:
+      - name: headroom
+        type: number
+        desc: a value greater than or equal to 0.0 where 1.0 indicates the SEVERE throttling threshold
+
+    - name: get_status
+      type: function
+      desc: Get the current thermal status of the device
+      returns:
+      - name: status
+        type: number
+        desc: The current thermal status of the device. One of THERMAL_STATUS_XYZ.
+
+    - name: THERMAL_STATUS_CRITICAL
+      type: number
+      desc: Platform has done everything to reduce power.
+
+    - name: THERMAL_STATUS_EMERGENCY
+      type: number
+      desc:  Key components in platform are shutting down due to thermal condition.
+
+    - name: THERMAL_STATUS_LIGHT
+      type: number
+      desc:  Light throttling where UX is not impacted.
+
+    - name: THERMAL_STATUS_MODERATE
+      type: number
+      desc: Moderate throttling where UX is not largely impacted.
+
+    - name: THERMAL_STATUS_NONE
+      type: number
+      desc: Not under throttling.
+
+    - name: THERMAL_STATUS_SEVERE
+      type: number
+      desc: Severe throttling where UX is largely impacted.
+
+    - name: THERMAL_STATUS_SHUTDOWN
+      type: number
+      desc: Need shutdown immediately
+
+
