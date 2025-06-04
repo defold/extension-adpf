@@ -73,6 +73,3 @@ local headroom = adpf.thermal.get_headroom(3)
 ## Source code
 
 The source code is available on [GitHub](https://github.com/defold/extension-adpf)
-
-
-## API reference
